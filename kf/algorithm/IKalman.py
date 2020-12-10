@@ -8,7 +8,7 @@ class IKalman(object):
         self.next_state_matrix = np.array([[1., 1.], [0, 1.]])
         self.state_matrix = np.array([[1., 0.]])
         self.num_observables = self.state_matrix.sum().astype(int)
-        self.measurement_uncertainty = np.ones(self.num_observables) * 0.75
+        self.measurement_uncertainty = np.ones(self.num_observables)
 
     def update(self, *args):
         raise NotImplementedError("Implement that method.")
