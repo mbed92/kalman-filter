@@ -20,7 +20,7 @@ class EmptyWorld2D(IWorld):
 
     def plot_gaussian_uncertainty(self, mean, variance, **kwargs):
         assert variance.shape[0] == mean.shape[0]
-        assert variance.shape[1] == 2
+        assert variance.shape[1] == self.ndim
         color = kwargs["color"] if "color" in kwargs else "blue"
 
         # visualize the gaussian uncertainty as an ellipse
