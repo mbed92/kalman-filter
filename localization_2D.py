@@ -1,6 +1,9 @@
 '''
 A very simple example of a localization using Kalman Filter.
 Author: Michał Bednarek
+
+In that example we observe the position at each time-step
+and predict the position and velocity.
 '''
 
 import numpy as np
