@@ -9,17 +9,14 @@ class IWorld(object):
 
         self.figure = plt.figure(figsize=[width, height])
         self.ax = self.figure.gca()
-        self.ax.set_xlim(-width, width)
-        self.ax.set_ylim(-height, height)
+        self.ax.set_xlim([-width, width])
+        self.ax.set_ylim([-height, height])
 
     def update_location(self, agent_location):
         raise NotImplementedError("Implement that method.")
 
-    def add_gaussian_uncertainty(self, mean, variance):
+    def add_gaussian_uncertainty(self, mean, variance, rgb):
         raise NotImplementedError("Implement that method.")
 
     def show(self):
-        plt.show()
-
-    def clear(self):
-        self.ax.cla()
+        self.figure.show()

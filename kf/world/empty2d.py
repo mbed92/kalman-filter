@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Ellipse
 
 from .IWorld import IWorld
 
@@ -13,9 +15,12 @@ class EmptyWorld2D(IWorld):
         color = kwargs["color"] if hasattr(kwargs, "color") else "blue"
         self.ax.scatter(agent_location[0], agent_location[1], c=color)
 
-    def add_gaussian_uncertainty(self, mean, variance):
-        p = gaussian_kernel_2d(100, mean, variance)
-        self.ax.pcolormesh(p[0], p[1], p[2], cmap="Blues")
+    def add_gaussian_uncertainty(self, mean, variance, rgb):
+        # p = gaussian_kernel_2d(100, mean, variance)
+        # self.ax.pcolormesh(p[0], p[1], p[2], cmap=cmap)
+        e = Ellipse(xy=mean, width=variance[0], height=variance[1])
+        e.set_facecolor(rgb)
+        self.ax.add_artist(e)
 
 
 def gaussian_function(x, mean, sigma):
