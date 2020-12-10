@@ -20,3 +20,6 @@ class IWorld(object):
 
     def show(self):
         plt.show()
+
+    def clear(self):
+        self.ax.cla()
