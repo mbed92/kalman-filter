@@ -33,6 +33,6 @@ class EmptyWorld2D(IWorld):
                 angle = np.arctan(self.v_vec[1] / self.v_vec[0]) * 180.0
                 angle /= np.pi
 
-            e = Ellipse(xy=mean, width=variance[0][i], height=variance[1][i], angle=angle)
+            e = Ellipse(xy=mean, width=variance[i][0], height=variance[i][0], angle=angle)
             e.set_facecolor(color)
             self.ax.add_artist(e)
