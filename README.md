@@ -11,3 +11,8 @@ To see the results just run:
 ```
 python localization_2d.py
 ```
+
+Output should be like the image below. Red dots represent noisy measurements, blue dots with blue arrows
+represent predicted locations with velocity vectors. Uncertainty probability function was marked as grey 
+ellipses.
+![Localization](img/tracking_cos.png "")
