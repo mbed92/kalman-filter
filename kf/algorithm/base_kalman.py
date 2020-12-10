@@ -11,7 +11,7 @@ class KalmanFilter(IKalman):
 
     def update(self, state: np.ndarray, uncertainty: np.ndarray, measurement: np.ndarray):
         # compute an observation matrix
-        y = np.asarray([[measurement]]) - self.state_matrix @ state
+        y = np.asarray(measurement) - self.state_matrix @ state
         S = self.state_matrix @ uncertainty @ self.state_matrix.T
         S += self.measurement_uncertainty
         K = uncertainty @ self.state_matrix.T @ np.linalg.inv(S)
