@@ -1,2 +1,6 @@
 # KalmanFilter
-2D Kalman Filter 
+
+The repository contains a Python implementation of a Kalman Filter with the exemplary 
+script of a usage in localization task.
+
+
