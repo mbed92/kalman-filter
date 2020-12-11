@@ -28,11 +28,6 @@ class EmptyWorld2D(IWorld):
 
         # visualize the gaussian uncertainty as an ellipse rotated w.r.t. the velocity vector
         for i in range(variance.shape[0]):
-            angle = 0.0
-            if self.v_vec is not None and self.v_vec.sum() > 0:
-                angle = np.arctan(self.v_vec[1] / self.v_vec[0]) * 180.0
-                angle /= np.pi
-
-            e = Ellipse(xy=mean, width=variance[i][0], height=variance[i][0], angle=angle)
+            e = Ellipse(xy=mean, width=variance[i][0], height=variance[i][0])
             e.set_facecolor(color)
             self.ax.add_artist(e)
